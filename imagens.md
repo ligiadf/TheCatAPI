@@ -31,6 +31,10 @@ Exemplo no Postman:
 
 ![image](https://user-images.githubusercontent.com/39387852/205442726-0f62efe9-7543-4aa2-b301-6b94865a7eaf.png)
 
+## Caminho (path) nas chamadas
+
+https://api.thecatapi.com/v1
+
 ## Descrição do objeto - images
 
 O objeto `images` representa as fotos de gatos enviadas. Caso a imagem não seja de gato, ou seja de alguma forma inapropriada, ela será rejeitada.
@@ -69,7 +73,7 @@ Formatos aceitos: .gif, .jpg, ou .png
 
 **cURL**
 
-```
+```c
 curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 --header 'x-api-key: live_xxxxxxxxxx' \
 --form 'file=@"_3QaRAObB/cat-201.jpg"' \
