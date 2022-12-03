@@ -1,10 +1,10 @@
-# The Cat API - Postar imagens
+# The Cat API
 
 [The Cat API](https://thecatapi.com/) é uma API que pode ser usada gratuitamente e possui diferentes funcionalidades como adicionar imagens, filtrar por raça, votar e favoritar.
 
 Esta documentação é um exercício do curso [Decolando em TW: da API à documentação](https://marimoreiratw.com.br/decolando-em-tw/) e vai focar na funcionalidade de adicionar imagens, pesquisar e excluir imagens.
 
-## Visão geral
+# Visão geral - Postar imagens
 
 O recurso de postar imagens possibilita **adicionar fotos de gatos** e possui uma verificação de inteligência artificial para validar se é uma imagem de gato.
 
@@ -42,9 +42,9 @@ O objeto `images` representa as fotos de gatos enviadas. Caso a imagem não seja
 | `approved` | Status interno para indicar se está aprovada. Valores:<br>*0=falso<br>1=verdadeiro* | `integer` | Não | 
 | `breed_ids` | Identificação de raça. **Não implementado.** | N/A | Não | 
 
-## Casos de uso
+# Casos de uso
 
-### Adicionar seu gatinho :cat2:
+## Adicionar seu gatinho :cat2:
 
 **Endpoint**: ``POST /images/upload``
 
@@ -52,16 +52,34 @@ Adicione uma nova imagem no sistema carregando um arquivo válido contendo um ga
 
 Formatos aceitos: .gif, .jpg, ou .png
 
-#### Requisição
+### Requisição
 
-**Requisição - body**
+**Requisição - form**
 
 | Nome | Descrição | Tipo | Obrigatório |
 |------|-----------|------|-------------|
 | `file` | Arquivo em .gif, .png, ou .jpg | `file` | Sim :heavy_check_mark: |
 | `sub_id` | ID para identificação interna. | `string` | Não |
 
-#### Resposta
+**cURL**
+
+```
+curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
+--header 'x-api-key: live_xxxxxxxxxx' \
+--form 'file=@"_3QaRAObB/cat-201.jpg"' \
+--form 'sub_id="132456"'
+```
+
+### Resposta
+
+**201 - Created**
+
+Se a imagem enviada for válida, o retorno será de sucesso **201 - Created**.
+
+![cat-201](https://user-images.githubusercontent.com/39387852/205445823-a5cce237-599b-45bd-a22e-3bf5619d4c5c.jpg "Foto de um gato - Fonte: https://http.cat/201")
+Fonte: [HTTP Cats](https://http.cat/201)
+
+![image](https://user-images.githubusercontent.com/39387852/205446164-a1e11ac9-bf95-4fad-8761-d23c46097dda.png "Tela do Postman mostrando a requisição e o retorno com sucesso")
 
 **400 - Bad request**
 
@@ -71,12 +89,14 @@ Caso a imagem não seja válida, ou seja, não é uma imagem identificada como d
 
 ![image](https://user-images.githubusercontent.com/39387852/205445104-ca2484e1-7de1-4121-9b13-ddabf68d8564.png "Tela do Postman mostrando a requisição e o retorno com erro 400 Bad Request")
 
+## Pesquisar pelo gatinho adicionado :smile_cat:
 
-### Pesquisar pelo gatinho adicionado :smile_cat:
 
-### Pesquisar por todos os gatinhos :smile_cat::smile_cat:
 
-### Excluir um gatinho :crying_cat_face:
+## Pesquisar por todos os gatinhos :smile_cat::smile_cat:
+
+
+## Excluir um gatinho :crying_cat_face:
 
 Exclua uma imagem do sistema.
 
