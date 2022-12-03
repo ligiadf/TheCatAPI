@@ -2,7 +2,7 @@
 
 [The Cat API](https://thecatapi.com/) é uma API que pode ser usada gratuitamente e possui diferentes funcionalidades como adicionar imagens, filtrar por raça, votar e favoritar.
 
-Esta documentação é um exercício do curso Decolando em TW: da API à documentação e vai focar na funcionalidade de adicionar imagens, pesquisar e excluir imagens.
+Esta documentação é um exercício do curso [Decolando em TW: da API à documentação](https://marimoreiratw.com.br/decolando-em-tw/) e vai focar na funcionalidade de adicionar imagens, pesquisar e excluir imagens.
 
 ## Visão geral
 
@@ -65,15 +65,9 @@ Formatos aceitos: .gif, .jpg, ou .png
 
 **400 - Bad request**
 
-Caso a imagem não seja válida, ou seja, não é uma imagem identificada como de gato, o retorno será o erro **400 - Bad Request**
+Caso a imagem não seja válida, ou seja, não é uma imagem identificada como de gato, o retorno será o erro **400 - Bad Request** com mensagem ``Classifcation failed: correct animal not found.``
 
-Exemplo de imagem:
-
-![cat-doctor-who](https://user-images.githubusercontent.com/39387852/205444849-12c2e4f6-f4c7-4662-aa1c-2c3072aa3be3.jpg "Foto de uma mulher fantasiada de gato, uma personagem do seriado Doctor Who")
-
-Retorno:
-
-Classifcation failed: correct animal not found.
+![cat-doctor-who](https://user-images.githubusercontent.com/39387852/205444849-12c2e4f6-f4c7-4662-aa1c-2c3072aa3be3.jpg "Foto de uma mulher fantasiada de gato, uma personagem do seriado Doctor Who"
 
 ![image](https://user-images.githubusercontent.com/39387852/205445104-ca2484e1-7de1-4121-9b13-ddabf68d8564.png "Tela do Postman mostrando a requisição e o retorno com erro 400 Bad Request")
 
