@@ -10,7 +10,13 @@ O recurso de postar imagens possibilita **adicionar fotos de gatos** e possui um
 
 Estão disponíveis quatro endpoints para utilização do recurso de postar imagens: [adicionar](#adicionar-seu-gatinho-cat2), [recuperar uma](pesquisar-pelo-gatinho-adicionado-smile_cat) ou [todas as imagens](pesquisar-pelo-gatinho-adicionado-smile_cat) e [excluir imagens](excluir-um-gatinho-crying_cat_face).
 
-:x: Exemplo de imagens não aceitas:
+:heavy_check_mark: Exemplo de imagem aceita:
+
+![cat-201](https://user-images.githubusercontent.com/39387852/205445823-a5cce237-599b-45bd-a22e-3bf5619d4c5c.jpg "Foto de um gato - Fonte: https://http.cat/201")
+
+Fonte: [HTTP Cats](https://http.cat/201)
+
+:x: Exemplo de imagem não aceita:
 
 ![cat-doctor-who](https://user-images.githubusercontent.com/39387852/205444849-12c2e4f6-f4c7-4662-aa1c-2c3072aa3be3.jpg "Foto de uma mulher fantasiada de gato, uma personagem do seriado Doctor Who")
 
@@ -52,14 +58,14 @@ Adicione uma nova imagem no sistema carregando um arquivo válido contendo um ga
 
 Formatos aceitos: .gif, .jpg, ou .png
 
-### Requisição
-
-**Requisição - form**
+**form**
 
 | Nome | Descrição | Tipo | Obrigatório |
 |------|-----------|------|-------------|
 | `file` | Arquivo em .gif, .png, ou .jpg | `file` | Sim :heavy_check_mark: |
 | `sub_id` | ID para identificação interna. | `string` | Não |
+
+### Requisição
 
 **cURL**
 
@@ -72,20 +78,22 @@ curl --location --request POST 'https://api.thecatapi.com/v1/images/upload' \
 
 ### Resposta
 
-**201 - Created**
+Se a imagem enviada for válida, o retorno será de sucesso **201 - Created** e informará um JSON com os campos criados:
 
-Se a imagem enviada for válida, o retorno será de sucesso **201 - Created**.
+```json
+{
+    "id": "JTC8TKTkG",
+    "url": "https://cdn2.thecatapi.com/images/JTC8TKTkG.jpg",
+    "sub_id": "132456",
+    "width": 750,
+    "height": 600,
+    "original_filename": "cat-201.jpg",
+    "pending": 0,
+    "approved": 1
+}
+```` 
 
-![cat-201](https://user-images.githubusercontent.com/39387852/205445823-a5cce237-599b-45bd-a22e-3bf5619d4c5c.jpg "Foto de um gato - Fonte: https://http.cat/201")
-Fonte: [HTTP Cats](https://http.cat/201)
-
-![image](https://user-images.githubusercontent.com/39387852/205446164-a1e11ac9-bf95-4fad-8761-d23c46097dda.png "Tela do Postman mostrando a requisição e o retorno com sucesso")
-
-**400 - Bad request**
-
-Caso a imagem não seja válida, ou seja, não é uma imagem identificada como de gato, o retorno será o erro **400 - Bad Request** com mensagem ``Classifcation failed: correct animal not found.``
-
-![cat-doctor-who](https://user-images.githubusercontent.com/39387852/205444849-12c2e4f6-f4c7-4662-aa1c-2c3072aa3be3.jpg "Foto de uma mulher fantasiada de gato, uma personagem do seriado Doctor Who")
+Caso a imagem não seja válida, ou seja, não é uma imagem identificada como de gato, o retorno será o erro **400 - Bad Request** com mensagem não formatada em JSON: ``Classifcation failed: correct animal not found.``
 
 ![image](https://user-images.githubusercontent.com/39387852/205445104-ca2484e1-7de1-4121-9b13-ddabf68d8564.png "Tela do Postman mostrando a requisição e o retorno com erro 400 Bad Request")
 
@@ -101,3 +109,5 @@ Caso a imagem não seja válida, ou seja, não é uma imagem identificada como d
 Exclua uma imagem do sistema.
 
 Nota: este endpoint executa um *soft delete*, ou seja, não exclui de fato do banco de dados, apenas indica que não deve mais ser recuperada.
+
+Para confirmar a exclusão, execute novamente a [pesquisa da imagem por ID](pesquisar-pelo-gatinho-adicionado-smile_cat).
