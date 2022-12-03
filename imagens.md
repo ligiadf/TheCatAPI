@@ -67,7 +67,7 @@ Formatos aceitos: .gif, .jpg, ou .png
 
 Caso a imagem não seja válida, ou seja, não é uma imagem identificada como de gato, o retorno será o erro **400 - Bad Request** com mensagem ``Classifcation failed: correct animal not found.``
 
-![cat-doctor-who](https://user-images.githubusercontent.com/39387852/205444849-12c2e4f6-f4c7-4662-aa1c-2c3072aa3be3.jpg "Foto de uma mulher fantasiada de gato, uma personagem do seriado Doctor Who"
+![cat-doctor-who](https://user-images.githubusercontent.com/39387852/205444849-12c2e4f6-f4c7-4662-aa1c-2c3072aa3be3.jpg "Foto de uma mulher fantasiada de gato, uma personagem do seriado Doctor Who")
 
 ![image](https://user-images.githubusercontent.com/39387852/205445104-ca2484e1-7de1-4121-9b13-ddabf68d8564.png "Tela do Postman mostrando a requisição e o retorno com erro 400 Bad Request")
 
