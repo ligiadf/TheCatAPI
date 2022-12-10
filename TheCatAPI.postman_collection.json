@@ -43,11 +43,11 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": "_3QaRAObB/cat-201.jpg"
+							"src": ""
 						},
 						{
 							"key": "sub_id",
-							"value": "132456",
+							"value": "",
 							"type": "text"
 						}
 					]
@@ -79,7 +79,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "live_2du7MqgVFkeexQfcCL0Vn738CK9AnmW1Ye20vPbZ35WFKv507Y3NAGQYnt7hIbOB",
+						"value": "",
 						"type": "text"
 					},
 					{
@@ -117,12 +117,12 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "live_2du7MqgVFkeexQfcCL0Vn738CK9AnmW1Ye20vPbZ35WFKv507Y3NAGQYnt7hIbOB",
+						"value": "",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://api.thecatapi.com/v1/images?limit=100",
+					"raw": "https://api.thecatapi.com/v1/images?limit=25",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -136,7 +136,7 @@
 					"query": [
 						{
 							"key": "limit",
-							"value": "100"
+							"value": "25"
 						}
 					]
 				}
@@ -150,7 +150,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "live_2du7MqgVFkeexQfcCL0Vn738CK9AnmW1Ye20vPbZ35WFKv507Y3NAGQYnt7hIbOB",
+						"value": "",
 						"type": "text"
 					},
 					{
