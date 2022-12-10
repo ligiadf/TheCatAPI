@@ -31,9 +31,11 @@ Imagem: [Manja Vitolic on Unsplash](https://unsplash.com/photos/gKXKBY-C-Dk)
 
 Imagem: Reprodução
 
-## Caminho nas chamadas
+## Caminho nas chamadas + Postman
 
 O endereço utilizado para as requisições é: **https://api.thecatapi.com/v1**
+
+Acesse a [coleção do Postman](TheCatAPI.postman_collection.json) para testar.
 
 ## Autenticação
 
