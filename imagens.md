@@ -11,7 +11,7 @@ A documentação é composta por uma visão geral da API, endereço e forma de a
 
 ## Visão geral - Imagens
 
-O recurso de imagens possibilita **adicionar e recuperar fotos de gatos** através de **quatro endpoints**, explicados na seção de casos de uso:
+O recurso de imagens possibilita **adicionar e recuperar fotos de gatos** através de **quatro endpoints**, explicados nas seções:
 1. POST /images/upload :arrow_right: [Adicionar imagens](#adicionar-seu-gatinho-cat2)
 2. GET /images/{image_id} :arrow_right: [Recuperar uma imagem por ID](#pesquisar-pelo-gatinho-adicionado-smile_cat) 
 3. GET /images :arrow_right: [Recuperar todas as imagens](#pesquisar-por-todos-os-gatinhos-smile_catsmile_cat)
@@ -67,7 +67,7 @@ O objeto `images` representa as fotos de gatos enviadas. Caso a imagem não seja
 | `approved` | Status interno para indicar se está aprovada. Valores:<br>*0=falso<br>1=verdadeiro* | `integer` | Não | 
 | `breed_ids` | Identificação de raça. **Não implementado.** | N/A | Não | 
 
-# Casos de uso
+# Como gerenciar imagens
 
 A seguir são apresentados os quatro endpoints que permitem adicionar, recuperar e excluir imagens de gatos, apresentando os parâmetros necessários e exemplo de requisição e resposta.
 
@@ -79,7 +79,7 @@ Adicione uma nova imagem no sistema carregando um arquivo válido contendo um ga
 
 Os tipos de arquivos aceitos são: .jpg, e .png.
 
-Nota: a documentação oficial indica aceitar .gif, mas não foi possível enviar arquivos neste formato.
+Nota: a documentação oficial indica aceitar .gif mas não foi possível enviar arquivos neste formato.
 
 **Parâmetros - form**
 
@@ -267,7 +267,7 @@ Se a pesquisa retornar valores, o retorno será de sucesso **200 - OK** e inform
 ]
 ```
 
-Caso a pesquisa não retorno resultados, o retorno será o código **200 - OK** com um JSON vazio: `[]`.
+Caso a pesquisa não retorne resultados, o retorno será o código **200 - OK** com um JSON vazio: `[]`.
 
 ## Excluir um gatinho :crying_cat_face:
 
